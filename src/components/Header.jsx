@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/Logo-Gexpertise-Footer_1.jpg'
+import Logo from '../assets/logo-gexpertise.png'
 const Header = () => {
   return (
     <div className="bg-red-600 text-white p-8 md:w-1/2 flex flex-col justify-center items-center">

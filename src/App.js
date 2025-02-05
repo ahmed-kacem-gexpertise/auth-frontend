@@ -1,15 +1,21 @@
 import React from 'react';
-import Header from './components/Header'
-import SignInForm from './components/SignInForm'
-
+import SignInPage from './pages/SignInPage'
+import SignUpPage from './pages/SignUpPage'
+import PageNotFound from './components/PageNotFound'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const App = () => {
   return (
-    <div className="bg-gray-100 flex items-center justify-center min-h-screen">
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full md:flex">
-        <Header />
-        <SignInForm />
-      </div>
-    </div>
+<BrowserRouter>
+      <Routes>
+          <Route path="/" element={<SignInPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="*" element={<PageNotFound />} />
+
+          
+          
+      </Routes>
+    </BrowserRouter>
   );
 };
 

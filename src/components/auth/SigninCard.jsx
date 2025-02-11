@@ -3,10 +3,11 @@ import  GexpertiseLogoSignin from './GexpertiseLogoSignin'
 import SigninForm from './SigninForm'
 const SigninCard = () => {
     return (
-        <main className="flex-grow flex flex-col items-center justify-center gap-6">
+    
+        <div className="flex-grow flex flex-col items-center justify-center gap-6">
             <GexpertiseLogoSignin/>
             <SigninForm/>
-        </main>
+        </div>
 
     )
 }

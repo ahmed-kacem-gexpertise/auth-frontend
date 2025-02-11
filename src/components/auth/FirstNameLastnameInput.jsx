@@ -10,7 +10,7 @@ const FirstNameLastnameInput = () => {
               <input
                 type="text"
                 className="shadow appearance-none border rounded w-full py-2 px-2  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                defaultValue="Doe"
+                placeholder="Doe"
               />
               
             </div>
@@ -21,7 +21,7 @@ const FirstNameLastnameInput = () => {
               <input
                 type="text"
                 className="shadow appearance-none border rounded w-full py-2 px-2  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                defaultValue="joe"
+                placeholder="jhon"
               />
               
             </div>

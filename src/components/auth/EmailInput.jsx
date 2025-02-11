@@ -8,7 +8,7 @@ const EmailInput = () => {
               <input
                 type="text"
                 className="shadow appearance-none border rounded w-full py-2 px-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                defaultValue="hello@example.com"
+                placeholder="jhondoe@example.com"
               />
               <i className="fas fa-envelope absolute left-2 text-gray-400"></i>
             </div>

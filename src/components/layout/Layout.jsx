@@ -4,13 +4,13 @@ import Header from './Header';
 import Footer from './Footer'
 const Layout = () => {
     return (
-        <div className="w-full">
+        <div className="flex flex-col justify-between w-full min-h-screen" >
         <Header/>
       
-        <div className=" min-h-screen flex items-center justify-center ">
-
+        <main className=" min-h-full  flex items-start justify-center ">
+          
           <Outlet />
-        </div>
+        </main>
         
         <Footer/>
         

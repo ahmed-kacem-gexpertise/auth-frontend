@@ -8,10 +8,10 @@ const PasswordInput = () => {
   };
     return (
         
-        <>
+    
 
-            <label className="text-gray-700 text-sm font-bold">Mot de passe</label>
             <div className="relative flex items-center">
+            
               <input
                  type={isPasswordVisible ? "text" : "password"}
                 className="shadow appearance-none border rounded w-full py-2 px-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -24,7 +24,7 @@ const PasswordInput = () => {
             ></i>
 
             </div>
-        </>
+        
          
     )
 }

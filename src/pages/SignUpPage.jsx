@@ -1,12 +1,10 @@
 import React from 'react'
+import SignupCard from '../components/auth/SignupCard';
 
 
 const SignUpPage = () => {
     return (
-        <div className="bg-gray-100 ">
-          hi
-
-        </div>
+        <SignupCard/>
     )
 }
 

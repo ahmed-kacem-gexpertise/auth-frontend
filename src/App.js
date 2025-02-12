@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './pages/HomePage';
 import Layout from './components/layout/Layout';
 import HomeLayout from './components/layout/HomeLayout';
-import AdminDashboard from './pages/AdminDashboard'
+import AdminDashboardPage from './pages/AdminDashboard'
 const App = () => {
   return (
 <BrowserRouter>
@@ -18,9 +18,9 @@ const App = () => {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
-          <Route path="/home"  element={<HomeLayout />}>
+          <Route path="/dashboard"  element={<HomeLayout />}>
 
-            <Route index element={<AdminDashboard />} />
+            <Route index element={<AdminDashboardPage />} />
 
           </Route>
                       

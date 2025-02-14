@@ -9,6 +9,7 @@ import SignupLink from './SignupLink'
 
 import {useForm} from 'react-hook-form'
 import useAuthLogin from '../../hooks/useAuthLogin';
+import { Link } from 'react-router-dom';
 
 
 
@@ -35,7 +36,7 @@ const SigninForm = () => {
         <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">
                 <label className="text-gray-700 text-sm font-bold">Mot de passe</label>
-                <a href="#" className="text-sm text-blue-500 self-end">Mot de passe oublié ?</a>
+                <Link href="#" className="text-sm text-blue-500 self-end">Mot de passe oublié ?</Link>
             </div>
             <PasswordInput 
                 {...register("password", { 
@@ -46,7 +47,7 @@ const SigninForm = () => {
             {errors.password && <span className="text-red-500 text-xs">{errors.password.message}</span>}
         </div>
     
-        <CheckBox />
+        <CheckBox  {...register("rememberMe")}/>
         <ConnectButton /> 
         <OrConnectWithSplitter />
         <MicrosoftConnectButton />

@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import Layout from './components/layout/Layout';
 import HomeLayout from './components/layout/HomeLayout';
 import AdminDashboardPage from './pages/AdminDashboard'
+import ConfirmEmail from './components/auth/ConfirmEmail';
 const App = () => {
   return (
 <BrowserRouter>
@@ -16,6 +17,7 @@ const App = () => {
             <Route index element={<HomePage />} />
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/confirm" element={<ConfirmEmail/>}/>
             <Route path="*" element={<PageNotFound />} />
           </Route>
           <Route path="/dashboard"  element={<HomeLayout />}>

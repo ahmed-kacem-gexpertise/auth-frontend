@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom'; 
-import {login} from '../services/authService';
+import {login} from '../services/api';
 
 const useAuthLogin = () => {
   const navigate = useNavigate(); 
@@ -8,10 +8,7 @@ const useAuthLogin = () => {
   return useMutation( {
     mutationFn: login,
     onSuccess: (data) => {
-      console.log(data.data.access_token)
-      if (data.data.access_token) {
-        localStorage.setItem('accessToken', data.data.access_token);
-      }
+      
       navigate('/dashboard');
     },
     onError: (error) => {

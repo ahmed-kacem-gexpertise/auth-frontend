@@ -18,5 +18,15 @@ api.interceptors.request.use(
       return Promise.reject(error);
     }
   );
-  
-export default api;
+
+const login = (data) => {
+  return api.post('/auth/login', data);
+};
+
+ const register = (data) => {
+  return api.post('/auth/register', data);
+};
+const resetPassword= (data) =>{
+  return api.put('/auth/resetPassword')
+}
+export { login, register };

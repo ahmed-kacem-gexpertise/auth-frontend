@@ -1,9 +1,10 @@
 import React from 'react'
+import ConfirmEmail from '../components/auth/ConfirmEmail';
 
 const HomePage = () => {
     return (
       
-            <p>home</p>
+           <div>homepage</div>
 
        
         

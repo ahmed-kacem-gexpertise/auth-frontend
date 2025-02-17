@@ -1,18 +1,15 @@
-import { useMutation } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom'; 
-import {login} from '../services/api';
+import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+import { login } from "../services/api";
 
 const useAuthLogin = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-  return useMutation( {
+  return useMutation({
     mutationFn: login,
-    onSuccess: (data) => {
-      
-      navigate('/dashboard');
-    },
+    onSuccess: (data) => {},
     onError: (error) => {
-      console.error('Login error:', error);
+      console.error("Login error:", error);
     },
   });
 };

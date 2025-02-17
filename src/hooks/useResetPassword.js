@@ -1,20 +1,19 @@
-import { useMutation } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom'; 
-import {register} from '../services/api';
+import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+import { resetPassword } from "../services/api";
 
-const useAuthregister = () => {
-  const navigate = useNavigate(); 
+const useResetPassword = () => {
+  const navigate = useNavigate();
 
-  return useMutation( {
-    mutationFn: register,
+  return useMutation({
+    mutationFn: resetPassword,
     onSuccess: (data) => {
-      console.log('register successful:', data);
-      navigate('/signin');
+      console.log("resetting pasword success:", data);
     },
     onError: (error) => {
-      console.error('register error:', error);
+      console.error("resetting pasword error:", error);
     },
   });
 };
 
-export default useAuthregister;
+export default useResetPassword;

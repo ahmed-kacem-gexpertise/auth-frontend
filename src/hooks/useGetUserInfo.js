@@ -5,7 +5,7 @@ const useGetUserInfo = () => {
     queryKey: ["userInfo"],
     queryFn: user,
     onSuccess: (data) => {
-      console.log("cool");
+      console.log(data.json());
     },
     onError: (error) => {
       console.error("Error fetching user:", error);

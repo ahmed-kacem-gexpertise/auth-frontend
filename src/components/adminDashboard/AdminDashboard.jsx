@@ -1,17 +1,20 @@
 import React from "react";
 
-import useGetUserInfo from "../../hooks/useGetUserInfo";
 const AdminDashboard = () => {
-  const { data, isLoading, isSuccess, isError, error } = useGetUserInfo();
+  /* const { data, isLoading, isSuccess, isError, error } = useGetUserInfo();
 
   if (isLoading) return <p>Loading user info...</p>;
   if (isError) return <p>Error: {error.message}</p>;
-
+ */
   return (
-    <div>
+    <>
+
+    {/* <div>
       <p>email : {data.email}</p>
       <p>admin : {`${data.admin}`}</p>
-    </div>
+    </div> */}
+    <div>user</div>
+    </>
   );
 };
 

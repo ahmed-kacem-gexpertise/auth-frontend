@@ -1,20 +1,23 @@
 import { useMutation } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom'; 
-import {register} from '../services/api';
+import { useNavigate } from 'react-router-dom';
+import { register } from '../services/api';
+import { toast } from 'react-toastify';  
 
-const useAuthregister = () => {
-  const navigate = useNavigate(); 
+const useAuthRegister = () => {
+  const navigate = useNavigate();
 
-  return useMutation( {
+  return useMutation({
     mutationFn: register,
     onSuccess: (data) => {
       console.log('register successful:', data);
+      toast.success("Inscription réussie! Veuillez vérifier votre email pour la confirmation"); 
       navigate('/signin');
     },
     onError: (error) => {
       console.error('register error:', error);
+      toast.error("Erreur d'inscription, veuillez réessayer.");  
     },
   });
 };
 
-export default useAuthregister;
+export default useAuthRegister;

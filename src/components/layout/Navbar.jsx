@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaHome, FaBell, FaUser, FaGlobe } from "react-icons/fa";
+import UserMenu from "./UserMenu";
 
 const Navbar = () => {
   return (
@@ -16,9 +17,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-x-4">
-          <Link to="/profile" className="text-white text-2xl">
-            <FaUser />
-          </Link>
+          <UserMenu/>
           <Link to="#" className="text-white text-2xl flex items-center gap-x-1">
             <span className="text-sm">FR</span> <FaGlobe />
           </Link>

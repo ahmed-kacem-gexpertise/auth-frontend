@@ -9,17 +9,14 @@ import { toast } from "react-toastify";
 const EmailConfirmationPage = () => {
   const { error, isSuccess, isLoading, isError } = useConfirmEmail();
   console.log(error);
-  const navigate = useNavigate();
   useEffect(() => {
     if (isSuccess) {
       toast.success("Email confirmed successfully! 🎉");
-      setTimeout(() => {
-        navigate("/signin");
-      }, 2000);
+     
     } else if (isError) {
       toast.error("Error confirming email.");
     }
-  }, [isSuccess, isError, navigate]);
+  }, [isSuccess, isError]);
 
   return (
     <>

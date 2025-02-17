@@ -1,14 +1,15 @@
 import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { resetPassword } from "../services/api";
 
 const useResetPassword = () => {
-  const navigate = useNavigate();
 
+  const { token } = useParams();
   return useMutation({
-    mutationFn: resetPassword,
-    onSuccess: (data) => {
-      console.log("resetting pasword success:", data);
+
+    mutationFn:(data)=> resetPassword(data,token),
+    onSuccess: () => {
+      console.log("resetting pasword success:");
     },
     onError: (error) => {
       console.error("resetting pasword error:", error);

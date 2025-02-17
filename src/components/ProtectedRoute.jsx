@@ -1,26 +1,30 @@
-import { Route, Outlet } from "react-router-dom";
-import useGetUserInfo from "../hooks/useGetUserInfo";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useGetUserInfo from "../hooks/useGetUserInfo";
+
+ import { Outlet } from "react-router-dom";
 
 const ProtectedRoute = ({ admin, ...rest }) => {
   const navigate = useNavigate();
+  const { data: user, isLoading, isError } = useGetUserInfo();
 
-  const { data: user, isLoading, isError, error } = useGetUserInfo();
+  useEffect(() => {
+    if (isLoading) return;
 
+    if (isError || !user) {
+      navigate("/signin"); 
+    } else if (admin && !user.admin) {
+      navigate("/unauthorized"); 
+    }
+  }, [isLoading, isError, user, admin, navigate]);
+
+ 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (isError || !user) {
-    navigate("/login");
-    return null;
-  }
-
-  if ((admin && user.admin) || admin === user.admin) {
-    return <Outlet />;
-  }
-
-  navigate("/");
+ 
+  return <Outlet />;
 };
 
 export default ProtectedRoute;

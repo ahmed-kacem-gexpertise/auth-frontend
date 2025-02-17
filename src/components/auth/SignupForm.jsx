@@ -20,7 +20,7 @@ const SignupForm = () => {
     if (data.password !== data.confirmPassword) {
       setError("confirmPassword", {
         type: "manual",
-        message: "Passwords do not match",
+        message: "Les mots de passe ne correspondent pas",
       });
       return;
     }
@@ -35,13 +35,19 @@ const SignupForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="w-full max-w-lg bg-white rounded shadow-md p-6 flex flex-col gap-4"
     >
-      <FirstNameLastnameInput register={register} errors={errors} />
-      <EmailInput register={register} errors={errors} />
+     <FirstNameLastnameInput register={register}  />
+      <EmailInput {...register("email", {
+        required: "L'email est requis",
+        pattern: {
+          value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          message: "Adresse email invalide",
+        },
+      })}  />
 
       <div className="flex flex-col gap-2">
         <label className="text-gray-700 text-sm font-bold">Mot de passe</label>
         <PasswordInput
-          {...register("password", { required: "Password is required" })}
+          {...register("password", { required: "Le mot de passe est requis" })}
           error={errors.password}
         />
       </div>
@@ -51,18 +57,17 @@ const SignupForm = () => {
           Confirmer le mot de passe
         </label>
         <PasswordInput
-          {...register("confirmPassword", {
-            required: "Confirm password is required",
-          })}
+          {...register("confirmPassword", { required: "La confirmation du mot de passe est requise" })}
           error={errors.confirmPassword}
         />
-       
       </div>
 
       <AgreeOnTermsOfService />
+
       {signupError && (
         <p className="text-red-500 text-sm">{signupError.message}</p>
       )}
+
       <SubscribeButton isLoading={isLoading} />
     </form>
   );
